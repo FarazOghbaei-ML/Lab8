@@ -27,7 +27,8 @@ public class CustomListTest {
         list.addCity(e);
         assertTrue(list.hasCity(e));
     }
-    @org.junit.Test
+
+    @Test
     public void deleteCity_removesAndDecrements() {
         list = MockCityList();
         City a = new City("Airdrie","AB");
@@ -40,7 +41,8 @@ public class CustomListTest {
         assertFalse(list.hasCity(a));
         assertTrue(list.hasCity(b));
     }
-    @org.junit.Test
+
+    @Test
     public void countCities_matchesGetCount() {
         list = MockCityList();
         list.addCity(new City("Calgary","AB"));

@@ -26,21 +26,15 @@ public class CustomList extends ArrayAdapter<City> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
         View view = convertView;
-
         if(view == null){
             view = LayoutInflater.from(context).inflate(R.layout.content, parent,false);
         }
-
         City city = cities.get(position);
-
         TextView cityName = view.findViewById(R.id.city_text);
         TextView provinceName = view.findViewById(R.id.province_text);
-
         cityName.setText(city.getCityName());
         provinceName.setText(city.getProvinceName());
-
         return view;
     }
 
@@ -48,19 +42,21 @@ public class CustomList extends ArrayAdapter<City> {
         return cities.size();
     }
 
-    // FIRST PHASE: intentionally empty so the test FAILS
     public void addCity(City city){
-    cities.add(city);
-}
+        cities.add(city);
+    }
+
     public boolean hasCity(City city){
         return cities.contains(city);
     }
+
     public void deleteCity(City city){
         if (!cities.contains(city)) {
             throw new IllegalArgumentException("City not in list");
         }
         cities.remove(city);
     }
+
     public int countCities(){
         return getCount();
     }
