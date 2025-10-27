@@ -40,4 +40,10 @@ public class CustomListTest {
         assertFalse(list.hasCity(a));
         assertTrue(list.hasCity(b));
     }
+    @org.junit.Test
+    public void countCities_matchesGetCount() {
+        list = MockCityList();
+        list.addCity(new City("Calgary","AB"));
+        assertEquals(list.getCount(), list.countCities());
+    }
 }
