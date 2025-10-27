@@ -42,15 +42,14 @@ public class CustomList extends ArrayAdapter<City> {
         provinceName.setText(city.getProvinceName());
 
         return view;
-
     }
 
     public int getCount(){
         return cities.size();
     }
 
+    // FIRST PHASE: intentionally empty so the test FAILS
     public void addCity(City city){
-
-    }
-
+    cities.add(city);
+}
 }
